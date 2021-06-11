@@ -110,14 +110,45 @@ console.log(`1, "2" = ${addWithTypeGuard(1,"2")}`);
 
 
 
+enum DoorState {
+
+     Open,
+     Closed
+
+}
+
+function checkDoorState(state:DoorState){
+
+    console.log(`enum value is : ${state}`);
+
+
+    switch(state){
+        case DoorState.Open:
+         console.log(`Door is open`);
+         break;
+        case DoorState.Closed:
+         console.log(`Door is closed`)
+         break;
+
+    }
+
+         
+    }
+
+
+checkDoorState(DoorState.Open)
+checkDoorState(DoorState.Closed)
 
 
 
+let array = ["123","456", "789"];
 
+delete array[0];
 
+for(let i = 0; i < array.length; i++){
 
-
-
+    console.log(`array[${i}] = ${array[i]}`);
+}
 
 
 

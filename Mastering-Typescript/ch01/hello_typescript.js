@@ -46,3 +46,21 @@ function addWithTypeGuard(arg1, arg2) {
 console.log("\"1\",\"2\" = " + addWithTypeGuard("1", "2") + " arg1 is a type of string");
 console.log("1, 2  =  " + addWithTypeGuard(1, 2) + " arg1 and arg2 are numbers ");
 console.log("1, \"2\" = " + addWithTypeGuard(1, "2"));
+var DoorState;
+(function (DoorState) {
+    DoorState[DoorState["Open"] = 0] = "Open";
+    DoorState[DoorState["Closed"] = 1] = "Closed";
+})(DoorState || (DoorState = {}));
+function checkDoorState(state) {
+    console.log("enum value is : " + state);
+    switch (state) {
+        case DoorState.Open:
+            console.log("Door is open");
+            break;
+        case DoorState.Closed:
+            console.log("Door is closed");
+            break;
+    }
+}
+checkDoorState(DoorState.Open);
+checkDoorState(DoorState.Closed);
