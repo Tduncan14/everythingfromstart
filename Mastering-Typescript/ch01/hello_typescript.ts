@@ -57,11 +57,67 @@ var item2 = {id:3, name:"treek"} as any;
  item2 = 24
 
 
+ function printObject(obj: string | number){
 
 
+    console.log(`obj = ${obj}`)
+ }
 
 
+//  function addWithUnion(
+     
+//     arg1:string | number,
+//     arg2: string | number
+
+//  ){
+
+//     return arg1 + arg2
+//  }
  
+
+
+function addWithTypeGuard(
+    arg1: string | number,
+    arg2: string | number
+) {
+
+    if(typeof arg1 === "string"){
+
+        console.log(`arg1 is of type string`)
+        return arg1 + arg2;
+
+
+    }
+
+    if(typeof arg1 === "number" && typeof arg2 === "number"){
+        //if both are numbers
+
+        console.log(`arg1 and arg2 are numbers`)
+        return arg1 + arg2;
+    }
+
+    console.log(`default treat them both as strings`);
+
+
+    return arg1.toString() + arg2.toString();
+
+}
+
+
+console.log(`"1","2" = ${addWithTypeGuard("1","2")} arg1 is a type of string`);
+console.log(`1, 2  =  ${addWithTypeGuard(1,2)} arg1 and arg2 are numbers `);
+console.log(`1, "2" = ${addWithTypeGuard(1,"2")}`);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
