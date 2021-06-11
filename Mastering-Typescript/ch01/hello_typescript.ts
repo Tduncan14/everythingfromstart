@@ -39,5 +39,29 @@ function printString(a:string) :void {
 }
 
 
-var returnedValue : string = printString("this is a string")
+// var returnedValue : string = printString("this is a string")
+
+
+ var item1: any = {id:1, name:"item"};
+
+ item1 ={id:2}
+
+
+
+ var item1 = <any>{id:1, name:"name"};
+ item1 = {id:2};
+
+
+var item2 = {id:3, name:"treek"} as any;
+
+ item2 = 24
+
+
+
+
+
+
+ 
+
+
 
