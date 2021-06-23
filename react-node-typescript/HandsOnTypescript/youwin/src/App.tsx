@@ -1,6 +1,7 @@
-import React, { useReducer } from 'react';
+import React, { useCallback, useReducer,useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Greeting from './greetings';
 
 
 
@@ -41,26 +42,67 @@ function App() {
    const [{message, enteredName}, dispatch ] =
     useReducer(reducer,initialState);
 
+   const [startCount, setStartCount] = useState(0);
+   const [count, setCount] = useState(0);
 
+
+   const setCountCallback = useCallback(() => {
+    const inc = count + 1 > startCount ? count + 1 : 
+      Number(count + 1) + startCount;
+    setCount(inc);
+  }, [count, startCount]);
+  const onWelcomeBtnClick = () => {
+    setCountCallback();
+  }
+
+  const onChangeStartCount = (
+    e:React.ChangeEvent<HTMLInputElement>
+  ) =>{
+     setStartCount(Number(e.target.value))
+  }
+
+
+   const onChangeName = (e:React.ChangeEvent<HTMLInputElement>) => {
+
+
+       dispatch({type:"enteredName",payload: e.target.value})
+
+       dispatch({type:"message", payload: e.target.value})
+
+   }
 
 
 
 
   return (
     <div className="App">
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+        <input value={enteredName} onChange={onChangeName} />
+
+
+        <Greeting message={message} 
+                  enteredName={enteredName}
+                  greetingDispatcher={dispatch}/>
+
+
+            
+        <div style ={{marginTop:`10px`}}>
+              <label> Enter a number and  we'll increment it</label>
+
+              <br />
+
+              <input value={startCount} onChange={onChangeStartCount} style={{width: '.75rem'}}/>
+
+              <label>{count}</label>
+              <br />
+
+
+              <button onClick ={onWelcomeBtnClick}>Increment Count</button>
+        </div>
+          
       </header>
     </div>
   );
