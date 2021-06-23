@@ -1,35 +1,28 @@
-import React, {FC, useState,useEffect} from 'react';
+import React from 'react';
+
 
 interface GreetingProps {
-     name?:string
-}
 
-
-const Greeting: FC<GreetingProps>  = ({name}:GreetingProps) => {
-
-
-     const [message, setMessage] = useState("");
-
-
-     useEffect(() => {
-
-        if(name){
-            setMessage(`Hello from, ${name}`)
-        }
-
-
-     },[name])
-
-
-     if(!name){
-         return <div> no name given</div>
-     }
-
-
-      return <div>{message}</div>
-    
+    message:string
 }
 
 
 
-export default Greeting
+export default function Greeting(props: GreetingProps){
+
+
+    console.log("rendering Greeting")
+
+
+
+
+    return(
+        <div>
+            {props.message}
+        </div>
+    )
+
+
+
+}
+
