@@ -1,7 +1,8 @@
-import React, { useCallback, useReducer,useState } from 'react';
+import React, { useCallback, useEffect, useReducer,useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Greeting from './greetings';
+import {ListItem,ListItems,ListCreator} from './lists';
 
 
 
@@ -44,6 +45,21 @@ function App() {
 
    const [startCount, setStartCount] = useState(0);
    const [count, setCount] = useState(0);
+   const [listItems, setlistItems] = useState<Array<ListItem>>();
+
+
+   useEffect(() => {
+
+    const li = [];
+
+    for(let i = 0; i < count ; i++){
+
+      li.push({id:i})
+
+    }
+
+    setlistItems(li)
+   },[count])
 
 
    const setCountCallback = useCallback(() => {
@@ -101,6 +117,10 @@ function App() {
 
 
               <button onClick ={onWelcomeBtnClick}>Increment Count</button>
+        </div>
+
+        <div>
+          <ListCreator listItems={listItems} />
         </div>
           
       </header>
