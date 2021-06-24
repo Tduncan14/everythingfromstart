@@ -1,8 +1,35 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import DisplayText from './displayText';
 
 function App() {
+
+
+  const getUserFullname = async (username:string) :Promise<string> => {
+
+   const usersResponse = await fetch("https://jsonplaceholder.typicode.com/users");
+
+   if(usersResponse.ok){
+     const users = await usersResponse.json()
+     const userByName = users.find((user:any) => {
+
+      return user.username.toLowerCase() === username;
+ 
+ 
+ 
+    })
+
+    return userByName.name;
+
+   }
+
+   return "";
+
+  }
+
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -16,8 +43,10 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+         Learn React
         </a>
+
+        <DisplayText />
       </header>
     </div>
   );
