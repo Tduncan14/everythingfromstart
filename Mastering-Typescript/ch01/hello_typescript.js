@@ -86,7 +86,11 @@ for (var i = 0; i < array.length; i++) {
     console.log("array[" + i + "] = " + array[i]);
 }
 var firstObj = { id: 1, name: "firstObj" };
-var secondObj = __assign({}, firstObj);
+var secondObj = 
+
+
+
+__assign({}, firstObj);
 console.log("secondObj: " + JSON.stringify(secondObj));
 var nameObj = { name: "nameObj name" };
 var idObj = { id: 1 };

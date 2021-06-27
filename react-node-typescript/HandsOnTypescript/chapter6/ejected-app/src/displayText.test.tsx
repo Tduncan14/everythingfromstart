@@ -1,5 +1,5 @@
 import React from 'react';
-import { render,fireEvent } from '@testing-library/react';
+import { render,fireEvent,cleanup,waitFor } from '@testing-library/react';
 import DisplayText from './displayText';
 import"@testing-library/jest-dom/extend-expect";
 
@@ -50,8 +50,25 @@ describe("Test DisplayText",() => {
 
     })
 
+    
 
     
 
 
 })
+
+describe("Test DisplayText", () => {
+    const userFullName = "John Tester";
+    const getUserFullnameMock = (username: string): 
+     [Promise<string>, jest.Mock<Promise<string>,        [string]>] => {        
+        const promise = new Promise<string>((res, rej) => {
+            res(userFullName);
+        });
+        const getUserFullname = jest.fn(
+          async (username: string): Promise<string> => {
+            return promise;
+        });
+        return [promise, getUserFullname];
+    }
+
+}
