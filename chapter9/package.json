@@ -1,0 +1,21 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.12",
+    "@types/uuid": "^8.3.1",
+    "apo": "^0.0.0",
+    "apollo-server-express": "^2.25.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.9",
+    "uuid": "^8.3.2"
+  }
+}
