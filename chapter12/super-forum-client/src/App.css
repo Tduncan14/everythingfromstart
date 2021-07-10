@@ -13,3 +13,50 @@
   gap:0.75rem 0.4rem;
 }
 
+.navigation {
+  grid-area:nav;
+  background-color:pink;
+}
+
+.sidebar{
+  min-height:var(--min-screen-height);
+  grid-area:sidebar;
+  background-color:aliceblue;
+}
+
+.leftmenu{
+  grid-area:leftmenu;
+  background-color:skyblue;
+}
+
+.content{
+  min-height:var(--min-screen-height);
+  grid-area:content;
+  background-color:skyblue;
+}
+
+.rightmenu{
+  grid-area:rightmenu;
+  background-color:coral;
+}
+
+
+@media screen and (orientation:protrait) and (max-width:768px){
+
+
+
+  .App{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "content";
+  }
+
+
+
+
+
+}
+
+
+
