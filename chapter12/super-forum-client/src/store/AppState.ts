@@ -1,3 +1,14 @@
+import {combineReducers} from "redux";
+import {UserProfileReducer} from "./user/Reducer"
 
 
-export default {}
+
+export const rootReducer = combineReducers ({
+     user:UserProfileReducer
+})
+
+
+
+export type AppState = ReturnType <typeof rootReducer>;
+
+

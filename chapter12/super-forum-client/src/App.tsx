@@ -4,7 +4,7 @@ import './App.css';
 import Main from './components/Main';
 import LeftMenu from './components/LeftMenu';
 import Rightmenu from './components/RightMenu';
-import Sidebar from './components/Sidebar';
+import Sidebar from './components/sidebar/Sidebar';
 
 function App() {
 
