@@ -1,10 +1,19 @@
 import React from 'react';
+import { useWindowDimensions } from './hooks/useWindowDimensions';
 
 
-const Leftmenu = () => {
+
+const LeftMenu = () => {
+
+    const{width} = useWindowDimensions();
+    if(width <= 768) {
+        return null;
+    }
+     
+    return <div className="sidebar">Leftmenu</div>
 
 
-    return <main className="content">main</main>
 }
 
-export default Leftmenu
+
+export default LeftMenu

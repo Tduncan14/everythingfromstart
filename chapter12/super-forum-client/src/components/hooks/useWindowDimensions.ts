@@ -7,7 +7,7 @@ interface WindowDimension {
     width:number
 }
 
-export const useWindowDimensions = (): any => {
+export const useWindowDimensions = (): WindowDimension => {
 
     const [dimension,setDimension] = useState<WindowDimension>({
         height:window.innerHeight,
