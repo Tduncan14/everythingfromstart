@@ -9,7 +9,7 @@ const Sidebar = () => {
         return null;
     }
 
-    return <main className="content">main</main>
+    return <main className="sidebar">Sidebar</main>
 }
 
 export default Sidebar

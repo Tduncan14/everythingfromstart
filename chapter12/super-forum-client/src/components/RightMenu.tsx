@@ -11,7 +11,7 @@ const Rightmenu = () => {
 
 
 
-    return <main className="content">Right menu</main>
+    return <main className="rightmenu">Right menu</main>
 }
 
 export default Rightmenu

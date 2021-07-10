@@ -1,4 +1,7 @@
 import React from 'react';
+import LeftMenu from './LeftMenu';
+import Rightmenu from './RightMenu';
+import Sidebar from './Sidebar';
 
 
 const Main = () => {
