@@ -10,10 +10,11 @@ import configureStore from './store/configureStore';
 
 ReactDOM.render(
   <React.StrictMode>
-    
+    <Provider store={configureStore()}>
     <Router>
     <ErrorBoundary> <App /></ErrorBoundary> 
     </Router>
+    </Provider>
 
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useWindowDimensions } from '../hooks/useWindowDimensions';
-
+import SideBarMenus from './SideBarMenus';
 
 const Sidebar = () => {
 
@@ -9,7 +9,11 @@ const Sidebar = () => {
         return null;
     }
 
-    return <main className="sidebar">Sidebar</main>
+    return(
+        <div className="sidebar">
+            <SideBarMenus />
+        </div>
+    )
 }
 
 export default Sidebar
