@@ -5,6 +5,7 @@ import Main from './components/Main';
 import LeftMenu from './components/LeftMenu';
 import Rightmenu from './components/RightMenu';
 import Sidebar from './components/sidebar/Sidebar';
+import Nav from './components/Nav';
 
 function App() {
 
@@ -13,8 +14,7 @@ function App() {
 
   return (
     <div className="App">
-    <div className="navigation">Nav</div>
-
+   <Nav/>
     <Sidebar />
     <LeftMenu />
     <Main />
