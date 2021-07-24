@@ -29,8 +29,15 @@ const SideBarMenus = () => {
     return ( 
         <>
           <ul>
-              <FontAwesomeIcon icon ={faUser} />
-              <span className="menu-name">{user?.userName}</span>
+          <li>
+          <FontAwesomeIcon icon={faUser} />
+          <span className="menu-name">{user?.userName}          </span>
+        </li>
+        <li>
+          <FontAwesomeIcon icon={faRegistered} />
+          <span className="menu-name">register</span>
+        </li>
+
           </ul>
         </>
     )

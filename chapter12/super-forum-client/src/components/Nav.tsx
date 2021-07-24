@@ -34,21 +34,15 @@ const Nav = () => {
     }
 
 
-    const onClickToggle = (e:React.MouseEvent<Element,MouseEvent>) => {
-
-       setShowMenu(!showMenu)
-
-
-    }
-
-
-    const onResquestClose = (
-
-        e:React.MouseEvent<Element,MouseEvent> | React.KeyboardEvent<Element>
+    const onClickToggle = (e: React.MouseEvent<Element, MouseEvent>) => {
+        setShowMenu(!showMenu);
+      };
     
-    ) => {
-        setShowMenu(false)
-    }
+      const onRequestClose = (
+        e: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>
+      ) => {
+        setShowMenu(false);
+      };
 
 
    return(
@@ -56,8 +50,9 @@ const Nav = () => {
        <ReactModal
        className="modal-menu"
        isOpen={showMenu}
-       onRequestClose={onResquestClose}
+       onRequestClose={onRequestClose}
        shouldCloseOnOverlayClick={true}
+       ariaHideApp={false}
        >
         <SideBarMenus />
        </ReactModal>
